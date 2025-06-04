@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Nicola Adams",
+    "nationality": "Royaume-Uni",
+    "weight_class": "Poids mouche",
+    "olympic_year": 2012,
+    "attack_points": 82,
+    "defense_points": 89
+  },
+  {
+    "name": "Shakhobidin Zoirov",
+    "nationality": "Ouzbékistan",
+    "weight_class": "Poids mouche",
+    "olympic_year": 2016,
+    "attack_points": 84,
+    "defense_points": 83
+  },
+  {
+    "name": "Galal Yafai",
+    "nationality": "Royaume-Uni",
+    "weight_class": "Poids mouche",
+    "olympic_year": 2020,
+    "attack_points": 86,
+    "defense_points": 80
+  },
+  {
+    "name": "Zou Shiming",
+    "nationality": "Chine",
+    "weight_class": "Poids mouche",
+    "olympic_year": 2008,
+    "attack_points": 88,
+    "defense_points": 85
+  },
+  {
+    "name": "Daniel Asenov",
+    "nationality": "Bulgarie",
+    "weight_class": "Poids mouche",
+    "olympic_year": 2016,
+    "attack_points": 78,
+    "defense_points": 79
+  },
+  {
+    "name": "Anthony Joshua",
+    "nationality": "Royaume-Uni",
+    "weight_class": "Poids lourd",
+    "olympic_year": 2012,
+    "attack_points": 90,
+    "defense_points": 80
+  },
+  {
+    "name": "Erislandy Savón",
+    "nationality": "Cuba",
+    "weight_class": "Poids lourd",
+    "olympic_year": 2016,
+    "attack_points": 85,
+    "defense_points": 86
+  },
+  {
+    "name": "Evgeny Tishchenko",
+    "nationality": "Russie",
+    "weight_class": "Poids lourd",
+    "olympic_year": 2016,
+    "attack_points": 87,
+    "defense_points": 88
+  },
+  {
+    "name": "David Nyika",
+    "nationality": "Nouvelle-Zélande",
+    "weight_class": "Poids lourd",
+    "olympic_year": 2020,
+    "attack_points": 84,
+    "defense_points": 82
+  },
+  {
+    "name": "Julio César La Cruz",
+    "nationality": "Cuba",
+    "weight_class": "Poids lourd",
+    "olympic_year": 2020,
+    "attack_points": 89,
+    "defense_points": 90
+  }
+]
