@@ -1,0 +1,17 @@
+<%= form_with(model: boxer) do |form| %>
+  <% if boxer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(boxer.errors.count, "error") %> prohibited this boxer from being saved:</h2>
+
+      <ul>
+        <% boxer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
