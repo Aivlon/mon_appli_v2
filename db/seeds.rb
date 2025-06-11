@@ -1,24 +1,26 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
-
+# db/seeds.rb
 require 'json'
 
-boxers_each = JSON.parse(File.read(Rails.root.join("boxers_jo.json"))).each
-boxers_each.each do |boxer|
-  Boxer.create!(
-    name: boxer["name"],
-    nationality: boxer["nationality"],
-    weight_class: boxer["weight_class"],
-    olympic_year: boxer["olympic_year"],
-    attack_points: boxer["attack_points"],
-    defense_points: boxer["defense_points"]
-  )
+# Supprimer tous les boxeurs existants avant de recharger
+Boxer.destroy_all
+
+# Charger le fichier JSON
+file_path = Rails.root.join('boxers_jo.json')
+boxers_data = JSON.parse(File.read(file_path))
+
+boxers_data.each do |boxer_attrs|
+  # Créer uniquement si le boxeur n'existe pas déjà
+  boxer = Boxer.find_or_create_by(
+    name: boxer_attrs['name'],
+    olympic_year: boxer_attrs['olympic_year']
+  ) do |b|
+    b.nationality = boxer_attrs['nationality']
+    b.weight_class = boxer_attrs['weight_class']
+    b.attack_points = boxer_attrs['attack_points']
+    b.defense_points = boxer_attrs['defense_points']
+  end
+
+  puts "✅ #{boxer.name} (#{boxer.olympic_year})"
 end
+
+puts "🥊 Seed terminé : #{Boxer.count} boxeurs chargés"

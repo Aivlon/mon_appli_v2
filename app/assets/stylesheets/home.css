@@ -1,0 +1,287 @@
+.page-home .home-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 30%, #1f2937 100%);
+    color: white;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Navigation spéciale pour la page d'accueil */
+.page-home .navbar {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.page-home .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-home .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.page-home .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.page-home .nav-links a:hover {
+    color: #f87171;
+}
+
+/* Section Hero */
+.page-home .hero-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 20px;
+    text-align: center;
+}
+
+.page-home .hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-home .hero-title .highlight {
+    color: #f87171;
+    text-shadow: 0 0 20px rgba(248, 113, 113, 0.5);
+}
+
+.page-home .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #d1d5db;
+    line-height: 1.6;
+}
+
+/* Boutons CTA */
+.page-home .cta-container {
+    margin-bottom: 4rem;
+}
+
+.page-home .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    background: #dc2626;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+}
+
+.page-home .btn-primary:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
+}
+
+.page-home .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #dc2626;
+    color: #dc2626;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.page-home .btn-secondary:hover {
+    background: #dc2626;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.page-home .icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Section Stats */
+.page-home .stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-home .stat-card {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.page-home .stat-card:hover {
+    border-color: rgba(220, 38, 38, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.page-home .stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f87171;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(248, 113, 113, 0.5);
+}
+
+.page-home .stat-label {
+    color: #d1d5db;
+    font-size: 1rem;
+}
+
+/* Section Combats */
+.page-home .fights-section {
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-home .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.page-home .fights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.page-home .fight-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.page-home .fight-card:hover {
+    border-color: rgba(220, 38, 38, 0.6);
+    transform: translateY(-3px);
+}
+
+.page-home .fight-matchup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.page-home .fighter {
+    text-align: center;
+    flex: 1;
+}
+
+.page-home .fighter-category {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.page-home .fighter-stats {
+    color: #f87171;
+    font-size: 0.9rem;
+}
+
+.page-home .vs-divider {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: #f87171;
+}
+
+.page-home .fight-description {
+    text-align: center;
+    color: #d1d5db;
+    font-style: italic;
+}
+
+.page-home .final-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Responsive Design pour la page d'accueil */
+@media (max-width: 768px) {
+    .page-home .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .page-home .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .page-home .btn-primary,
+    .page-home .btn-secondary {
+        display: block;
+        margin: 0.5rem auto;
+        width: fit-content;
+    }
+
+    .page-home .stats-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .page-home .fights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-home .fight-matchup {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .page-home .vs-divider {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-home .hero-section {
+        padding: 2rem 20px;
+    }
+
+    .page-home .hero-title {
+        font-size: 2rem;
+    }
+}

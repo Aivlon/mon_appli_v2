@@ -1,16 +1,58 @@
-<p style="color: green"><%= notice %></p>
+<div class="main-content">
+  <!-- Titre de la page -->
+  <h1>🥊 Nos Boxeurs Olympiques</h1>
 
-<% content_for :title, "Boxers" %>
 
-<h1>Boxers</h1>
-
-<div id="boxers">
-  <% @boxers.each do |boxer| %>
-    <%= render boxer %>
-    <p>
-      <%= link_to "Show this boxer", boxer %>
-    </p>
+  <!-- Tableau des boxeurs -->
+  <% if @boxers.any? %>
+    <table class="boxers-table">
+      <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Nationalité</th>
+        <th>Catégorie</th>
+        <th>Année JO</th>
+        <th>Attaque</th>
+        <th>Défense</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @boxers.each do |boxer| %>
+        <tr>
+          <td class="boxer-name"><%= boxer.name %></td>
+          <td class="boxer-nationality">🌍 <%= boxer.nationality %></td>
+          <td>
+              <span class="weight-class <%= boxer.weight_class == 'Poids mouche' ? 'weight-flyweight' : 'weight-heavyweight' %>">
+                <%= boxer.weight_class %>
+              </span>
+          </td>
+          <td><%= boxer.olympic_year %></td>
+          <td class="attack-points boxer-stats">💥 <%= boxer.attack_points %></td>
+          <td class="defense-points boxer-stats">🛡️ <%= boxer.defense_points %></td>
+          <td>
+            <div class="btn-actions">
+              <%= link_to "view️", boxer_path(boxer), class: "btn-view", title: "Voir" %>
+              <%= link_to "edit", edit_boxer_path(boxer), class: "btn-edit", title: "Modifier",
+                          confirm: "Êtes-vous sûr de vouloir supprimer #{boxer.name} ?",
+                          class: "btn-delete", title: "Supprimer" %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <!-- Message si aucun boxeur -->
+    <div class="no-boxers">
+      <h2>Aucun boxeur pour le moment</h2>
+      <p>Commencez par ajouter des boxeurs olympiques à votre base de données.</p>
+      <%= link_to "Ajouter le premier boxeur", new_boxer_path, class: "btn-new" %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New boxer", new_boxer_path %>
+  <!-- Lien retour accueil -->
+  <div style="text-align: center; margin-top: 3rem;">
+    <%= link_to " Retour à l'accueil", root_path, class: "btn-view" %>
+  </div>
+</div>

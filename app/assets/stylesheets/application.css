@@ -1,10 +1,170 @@
+/* Ce fichier est le point d'entrée pour tous les styles CSS de l'application.
+                                                                 * Rails charge automatiquement ce fichier sur toutes les pages.
+                                                                 *
+                                                                 * Les directives *= require chargent automatiquement d'autres fichiers CSS :
+* - require_tree . : Charge TOUS les fichiers .css du dossier stylesheets/
+* - require_self : Inclut le CSS écrit dans ce fichier même
+    *
+    * L'ordre de chargement : d'abord les fichiers externes, puis ce fichier.
+*/
+
 /*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
+ *= require_tree .
+ *= require_self
  */
+
+/*
+   Supprime les marges et paddings par défaut du navigateur
+   pour avoir un contrôle total sur le design */
+
+* {
+    margin: 0;           /* Supprime toutes les marges */
+    padding: 0;          /* Supprime tous les paddings */
+    box-sizing: border-box;  /* Inclut bordures et paddings dans la taille */
+}
+
+/*style de base pour le body*/
+body {
+    font-family: 'Arial', sans-serif;  /* Police par défaut */
+    line-height: 1.6;                  /* Espacement entre les lignes */
+}
+
+/* Cette navigation apparaît sur toutes les pages */
+
+.navbar {
+    background: #333;        /* Fond gris foncé */
+    padding: 1rem 0;         /* Espacement vertical */
+    position: sticky;        /* Reste en haut lors du scroll */
+    top: 0;                  /* Position en haut de page */
+    z-index: 100;           /* Au-dessus des autres éléments */
+}
+
+/* Container pour centrer le contenu de la navigation */
+.nav-content {
+    max-width: 1200px;              /* Largeur maximum */
+    margin: 0 auto;                 /* Centrage horizontal */
+    padding: 0 20px;                /* Espacement horizontal */
+    display: flex;                  /* Disposition flexible */
+    justify-content: space-between; /* Espace entre logo et liens */
+    align-items: center;            /* Alignement vertical centré */
+}
+
+/* Style du logo */
+.logo {
+    font-size: 1.5rem;      /* Taille du texte */
+    font-weight: bold;      /* Texte en gras */
+    color: white;           /* Couleur blanche */
+    text-decoration: none;  /* Supprime le soulignement */
+}
+
+/* Styles des liens de navigation */
+.nav-links a {
+    color: white;                   /* Couleur blanche */
+    text-decoration: none;          /* Supprime le soulignement */
+    font-weight: 500;               /* Poids moyen */
+    margin-left: 2rem;              /* Espacement entre les liens */
+    transition: color 0.3s ease;    /* Animation au survol */
+}
+
+/* Effet au survol des liens */
+.nav-links a:hover {
+    color: #ccc;            /* Couleur gris clair au survol */
+}
+
+/* ===================================================
+   CONTENEUR PRINCIPAL POUR LES PAGES NORMALES
+   ===================================================
+   Utilisé par les pages autres que l'accueil */
+
+.main-content {
+    max-width: 1200px;      /* Largeur maximum */
+    margin: 2rem auto;      /* Centrage avec marges verticales */
+    padding: 0 20px;        /* Espacement horizontal */
+}
+
+/* ===================================================
+   STYLES DE BASE POUR LES TABLEAUX
+   ===================================================
+   Appliqués automatiquement à tous les tableaux */
+
+table {
+    width: 100%;                                /* Largeur totale */
+    border-collapse: collapse;                  /* Fusion des bordures */
+    margin: 1rem 0;                            /* Marges verticales */
+    background: white;                          /* Fond blanc */
+    border-radius: 8px;                        /* Coins arrondis */
+    overflow: hidden;                          /* Cache les débordements */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);   /* Ombre subtile */
+}
+
+/* Styles des cellules de tableau */
+th, td {
+    padding: 1rem;                  /* Espacement interne */
+    text-align: left;               /* Alignement à gauche */
+    border-bottom: 1px solid #eee;  /* Bordure inférieure */
+}
+
+/* Styles spécifiques aux en-têtes de tableau */
+th {
+    background: #f8f9fa;    /* Fond gris très clair */
+    font-weight: bold;      /* Texte en gras */
+}
+
+/* ===================================================
+   BOUTONS GÉNÉRIQUES
+   ===================================================
+   Classes réutilisables pour tous les boutons */
+
+.btn {
+    display: inline-block;          /* Affichage en ligne-bloc */
+    padding: 0.5rem 1rem;           /* Espacement interne */
+    text-decoration: none;          /* Supprime le soulignement */
+    border-radius: 4px;             /* Coins arrondis */
+    font-weight: 500;               /* Poids moyen */
+    transition: all 0.3s ease;      /* Animation sur tous les changements */
+    border: none;                   /* Supprime la bordure */
+    cursor: pointer;                /* Curseur pointer au survol */
+}
+
+/* Bouton principal (bleu) */
+.btn-primary {
+    background: #007bff;    /* Fond bleu */
+    color: white;           /* Texte blanc */
+}
+
+.btn-primary:hover {
+    background: #0056b3;    /* Bleu plus foncé au survol */
+}
+
+/* Bouton secondaire (gris) */
+.btn-secondary {
+    background: #6c757d;    /* Fond gris */
+    color: white;           /* Texte blanc */
+}
+
+.btn-secondary:hover {
+    background: #545b62;    /* Gris plus foncé au survol */
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN
+   ===================================================
+   Adaptations pour tablettes et mobiles */
+
+@media (max-width: 768px) {
+    /* Navigation sur mobile */
+    .nav-content {
+        flex-direction: column;     /* Navigation verticale */
+        gap: 1rem;                  /* Espacement entre éléments */
+    }
+
+    /* Liens de navigation sur mobile */
+    .nav-links a {
+        margin-left: 1rem;          /* Espacement réduit */
+    }
+
+    /* Contenu principal sur mobile */
+    .main-content {
+        padding: 0 10px;            /* Padding réduit */
+    }
+}

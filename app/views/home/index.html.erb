@@ -1,0 +1,57 @@
+<%= content_for :head do %>
+  <%= stylesheet_link_tag "home" %>
+<% end %>
+
+<div class="home-container">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="/" class="logo">🥊 BoxSim</a>
+      <div class="nav-links">
+        <%= link_to "Boxeurs", boxers_path %>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section Hero -->
+  <main class="hero-section">
+    <h1 class="hero-title">
+      Simulez des combats
+      <span class="highlight">légendaires</span>
+      de boxe !
+    </h1>
+
+    <p class="hero-subtitle">
+      Découvrez qui aurait gagné entre les plus grands champions olympiques.
+      Choisissez vos boxeurs et laissez l'algorithme décider du vainqueur.
+    </p>
+
+    <!-- CTA Principal -->
+    <div class="cta-container">
+      <a href="#" class="btn-primary">
+        <span class="icon">⚡</span>
+        Simuler un combat
+      </a>
+      <%= link_to boxers_path, class: "btn-secondary" do %>
+        <span class="icon">👊</span>
+        Voir les boxeurs
+      <% end %>
+    </div>
+
+    <!-- Section Stats -->
+    <div class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number"><%= Boxer.count %></div>
+        <div class="stat-label">Boxeurs olympiques</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Catégories de poids</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Combats possibles</div>
+      </div>
+    </div>
+  </main>
+</div>
